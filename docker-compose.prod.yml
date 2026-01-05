@@ -1,0 +1,49 @@
+version: "3.8"
+
+services:
+  web:
+    build: .
+    container_name: digitalizador_web
+    restart: always
+    command: gunicorn backend.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - web_static:/app/staticfiles
+      - web_media:/app/media
+    networks:
+      - default
+      - web # <--- CORRIGIDO: Agora conecta na sua rede 'web'
+    env_file:
+      - stack.env
+    depends_on:
+      - db
+    labels:
+      - "traefik.enable=true"
+      # Roteamento
+      - "traefik.http.routers.digitalizador.rule=Host(`digitalizadordeideias.com.br`)"
+      - "traefik.http.routers.digitalizador.entrypoints=websecure"
+      # Certificado SSL (HTTPS)
+      - "traefik.http.routers.digitalizador.tls=true"
+      - "traefik.http.routers.digitalizador.tls.certresolver=myresolver" # <--- OBS: Se seu certificado não gerar, verifique se o nome é 'myresolver' ou 'letsencrypt' no seu Traefik
+      # Porta Interna
+      - "traefik.http.services.digitalizador.loadbalancer.server.port=8000"
+
+  db:
+    image: postgres:15
+    container_name: digitalizador_db
+    restart: always
+    volumes:
+      - postgres_data_prod:/var/lib/postgresql/data/
+    env_file:
+      - stack.env
+    networks:
+      - default
+
+volumes:
+  postgres_data_prod:
+  web_static:
+  web_media:
+
+networks:
+  default:
+  web: # <--- CORRIGIDO: Definição da rede externa
+    external: true
