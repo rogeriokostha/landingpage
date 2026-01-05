@@ -11,20 +11,17 @@ services:
       - web_media:/app/media
     networks:
       - default
-      - web # <--- CORRIGIDO: Agora conecta na sua rede 'web'
+      - web
     env_file:
       - stack.env
     depends_on:
       - db
     labels:
       - "traefik.enable=true"
-      # Roteamento
       - "traefik.http.routers.digitalizador.rule=Host(`digitalizadordeideias.com.br`)"
       - "traefik.http.routers.digitalizador.entrypoints=websecure"
-      # Certificado SSL (HTTPS)
       - "traefik.http.routers.digitalizador.tls=true"
-      - "traefik.http.routers.digitalizador.tls.certresolver=myresolver" # <--- OBS: Se seu certificado não gerar, verifique se o nome é 'myresolver' ou 'letsencrypt' no seu Traefik
-      # Porta Interna
+      - "traefik.http.routers.digitalizador.tls.certresolver=myresolver"
       - "traefik.http.services.digitalizador.loadbalancer.server.port=8000"
 
   db:
@@ -33,8 +30,11 @@ services:
     restart: always
     volumes:
       - postgres_data_prod:/var/lib/postgresql/data/
-    env_file:
-      - stack.env
+    # AQUI ESTAVA O ERRO. AGORA VAMOS MAPEAS AS VARIÁVEIS:
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     networks:
       - default
 
@@ -45,5 +45,5 @@ volumes:
 
 networks:
   default:
-  web: # <--- CORRIGIDO: Definição da rede externa
+  web:
     external: true
