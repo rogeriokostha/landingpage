@@ -1,0 +1,402 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Digitalizador de Ideias | Hero Dark Orange</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#09090b',      // Preto fundo (inspirado na imagem)
+                            orange: '#f97316',  // Laranja vibrante principal
+                            amber: '#fbbf24',   // Laranja mais claro para degradê
+                            gray: '#a1a1aa',    // Cinza para textos secundários
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-bg text-white font-sans antialiased selection:bg-brand-orange selection:text-white">
+
+    <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
+                <span class="font-bold text-white text-lg">D</span>
+            </div>
+            <span class="font-bold text-xl tracking-tight">Digitalizador</span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
+            <a href="#servicos" class="hover:text-white transition">Serviços</a>
+            <a href="#processo" class="hover:text-white transition">Processo</a>
+            <a href="#depoimentos" class="hover:text-white transition">Depoimentos</a>
+        </div>
+
+        <a href="#contato" class="hidden md:inline-block px-5 py-2.5 rounded-lg bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white text-sm font-bold shadow-lg shadow-orange-500/20 transition transform hover:-translate-y-0.5">
+            Fale Conosco
+        </a>
+    </nav>
+
+    <section class="relative pt-20 pb-32 overflow-hidden flex flex-col items-center justify-center text-center px-6">
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/5 text-orange-400 text-xs font-semibold uppercase tracking-wider mb-8 animate-fade-in">
+            <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+            IA com Direção Humana
+        </div>
+
+        <h1 class="max-w-4xl mx-auto text-5xl md:text-7xl font-extrabold leading-[1.1] mb-6 animate-fade-in">
+            Primeiro <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">ouvimos</span> você,<br class="hidden md:block">
+            depois <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-500">criamos</span> com IA
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed animate-fade-in delay-100">
+            Landing pages e vídeos que convertem, criados com inteligência artificial, mas com a <strong>sua voz</strong> e a <strong>sua história</strong> no centro de tudo.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full animate-fade-in delay-200">
+            <a href="#contato" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-bold text-lg shadow-lg shadow-orange-500/25 transition transform hover:scale-105 flex items-center justify-center gap-2">
+                Agendar Conversa Gratuita
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+
+            <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-lg transition flex items-center justify-center gap-2 backdrop-blur-sm">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                Ver Exemplos
+            </a>
+        </div>
+
+        <div class="mt-20 border-t border-white/5 pt-8 w-full max-w-4xl">
+            <p class="text-sm text-gray-500 uppercase tracking-widest font-semibold mb-6">Empresas que confiam no nosso processo</p>
+            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
+                <span class="text-xl font-bold text-white">TechStart</span>
+                <span class="text-xl font-bold text-white">GrowthCo</span>
+                <span class="text-xl font-bold text-white">Inova+</span>
+                <span class="text-xl font-bold text-white">NextLevel</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="servicos" class="py-24 relative overflow-hidden">
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs font-medium uppercase tracking-wider mb-6">
+                    <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    Nossos Serviços
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Tecnologia que <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">entende</span> você
+                </h2>
+
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    Não somos apenas mais uma ferramenta de IA. Somos parceiros que escutam, entendem e traduzem sua visão em resultados reais.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <div class="group relative p-8 rounded-3xl bg-[#131316] border border-white/5 hover:border-brand-orange/30 transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center mb-8 shadow-lg shadow-brand-orange/10 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-4">Landing Pages com IA</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Páginas de alta conversão, criadas com inteligência artificial mas moldadas pela essência do seu negócio. Design único, copy persuasiva.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Design responsivo
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Otimizado para SEO
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Copy que converte
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Entrega rápida
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="group relative p-8 rounded-3xl bg-[#131316] border border-white/5 hover:border-brand-orange/30 transition duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center mb-8 shadow-lg shadow-brand-orange/10 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-white mb-4">Vídeos com IA</h3>
+                    <p class="text-gray-400 mb-8 leading-relaxed">
+                        Vídeos profissionais para redes sociais, anúncios e apresentações. Tecnologia de ponta com a mensagem que você quer transmitir.
+                    </p>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Roteiro personalizado
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Edição profissional
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Múltiplos formatos
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-300">
+                            <svg class="w-5 h-5 text-brand-orange" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                            Revisões inclusas
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="processo" class="py-24 relative bg-[#09090b]">
+        
+        <div class="absolute right-0 top-1/4 w-96 h-96 bg-brand-orange/5 rounded-full blur-[128px] pointer-events-none"></div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs font-medium uppercase tracking-wider mb-6">
+                    Como Funciona
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    Nosso processo <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">diferente</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Enquanto outros disparam templates genéricos, nós investimos tempo em conhecer você. É assim que criamos projetos que realmente funcionam.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="absolute left-8 md:left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-brand-orange/50 via-white/10 to-transparent"></div>
+
+                <div class="relative flex gap-8 mb-16 group">
+                    <div class="relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center shadow-lg shadow-brand-orange/20 z-10 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"></path></svg>
+                    </div>
+                    <div class="pt-2">
+                        <span class="text-brand-orange font-bold text-sm tracking-widest uppercase mb-2 block">Passo 01</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Ouvimos Você</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Começamos com uma conversa profunda. Queremos entender seu negócio, seus clientes, seus objetivos e o que faz você único. Sem pressa, sem templates.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative flex gap-8 mb-16 group">
+                    <div class="relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center shadow-lg shadow-brand-orange/20 z-10 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <div class="pt-2">
+                        <span class="text-brand-orange font-bold text-sm tracking-widest uppercase mb-2 block">Passo 02</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Criamos com IA</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Com suas informações em mãos, nossa IA trabalha para criar conteúdo que reflete sua marca. Cada palavra, cada imagem, cada segundo de vídeo é pensado para você.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="relative flex gap-8 group">
+                    <div class="relative flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center shadow-lg shadow-brand-orange/20 z-10 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <div class="pt-2">
+                        <span class="text-brand-orange font-bold text-sm tracking-widest uppercase mb-2 block">Passo 03</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Entregamos Resultados</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            Você recebe um produto final polido, revisado e pronto para converter. Nada sai sem sua aprovação. Seu sucesso é nosso sucesso.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="depoimentos" class="py-24 relative bg-[#09090b] border-t border-white/5">
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-gray-300 text-xs font-medium uppercase tracking-wider mb-6">
+                    <svg class="w-3 h-3 text-brand-orange" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    Depoimentos
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    O que nossos <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">clientes</span> dizem
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Resultados que falam por si. Histórias de parceiros que confiaram no nosso processo e escalaram suas vendas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="p-8 rounded-2xl bg-[#131316] border border-white/5 hover:border-brand-orange/20 transition duration-300 flex flex-col h-full">
+                    <svg class="w-10 h-10 text-brand-orange/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                        "Pela primeira vez, senti que uma empresa realmente entendeu o que eu queria comunicar. O resultado foi uma landing page que triplicou nossas conversões."
+                    </p>
+                    
+                    <div class="flex gap-1 text-brand-orange mb-6">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-6">
+                        <p class="text-white font-bold">Ana Costa</p>
+                        <p class="text-sm text-gray-500">CEO, TechStart</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#131316] border border-white/5 hover:border-brand-orange/20 transition duration-300 flex flex-col h-full">
+                    <svg class="w-10 h-10 text-brand-orange/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                        "Os vídeos que eles criaram para nossas redes sociais têm uma qualidade impressionante. E o melhor: cada um reflete exatamente a nossa marca."
+                    </p>
+                    
+                    <div class="flex gap-1 text-brand-orange mb-6">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-6">
+                        <p class="text-white font-bold">Ricardo Mendes</p>
+                        <p class="text-sm text-gray-500">Founder, GrowthCo</p>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-[#131316] border border-white/5 hover:border-brand-orange/20 transition duration-300 flex flex-col h-full">
+                    <svg class="w-10 h-10 text-brand-orange/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z"></path></svg>
+                    
+                    <p class="text-gray-300 leading-relaxed mb-6 flex-grow">
+                        "O processo de escuta deles é diferente de tudo que já vi. Não é só um briefing, é uma conversa real. O resultado final superou todas as expectativas."
+                    </p>
+                    
+                    <div class="flex gap-1 text-brand-orange mb-6">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+
+                    <div class="border-t border-white/5 pt-6">
+                        <p class="text-white font-bold">Juliana Santos</p>
+                        <p class="text-sm text-gray-500">Marketing, Inova+</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+
+<section id="contato" class="py-24 relative bg-[#09090b]">
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-full bg-brand-orange/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="relative rounded-3xl bg-[#131316] border border-white/10 p-12 md:p-20 text-center overflow-hidden">
+                
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-brand-amber shadow-lg shadow-brand-orange/20 mb-8 transform hover:scale-110 transition duration-300">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                </div>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Pronto para ser <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-amber">ouvido</span>?
+                </h2>
+
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Agende uma conversa gratuita e sem compromisso. Queremos conhecer seu negócio e mostrar como podemos ajudar você a crescer com IA e estratégia.
+                </p>
+
+                <div class="flex flex-col items-center gap-4">
+                    <a href="{% url 'whatsapp_track' %}" class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-brand-orange/80 hover:from-brand-orange/90 hover:to-brand-orange text-white font-bold text-lg shadow-lg shadow-brand-orange/25 transition transform hover:scale-105 gap-2 w-full md:w-auto">
+                        Agendar Conversa
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    
+                    <p class="text-xs text-gray-500 mt-4">
+                        Sem compromisso • Resposta em até 24h • 100% personalizado
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#09090b] border-t border-white/5 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center">
+                    <span class="font-bold text-white text-xs">D</span>
+                </div>
+                <span class="font-bold text-white text-lg tracking-tight">Digitalizador</span>
+            </div>
+
+            <div class="flex gap-8 text-gray-400 font-medium">
+                <a href="#servicos" class="hover:text-brand-orange transition">Serviços</a>
+                <a href="#processo" class="hover:text-brand-orange transition">Processo</a>
+                <a href="#depoimentos" class="hover:text-brand-orange transition">Depoimentos</a>
+                <a href="#contato" class="hover:text-brand-orange transition">Contato</a>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-orange hover:bg-brand-orange/10 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path><rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect></svg>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-orange hover:bg-brand-orange/10 transition">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="mailto:contato@digitalizador.com.br" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-brand-orange hover:bg-brand-orange/10 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </a>
+            </div>
+
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 text-center text-gray-600 text-xs">
+            &copy; <span id="year"></span> Digitalizador de Ideias. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

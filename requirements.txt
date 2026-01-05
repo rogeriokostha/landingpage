@@ -1,0 +1,8 @@
+Django>=5.0
+python-decouple      # Para gerenciar senhas e configurações (.env) com segurança
+django-ipware        # Para capturar o IP real do usuário (mesmo atrás de proxy/docker)
+geoip2               # Para transformar o IP em Localização (Cidade/Estado)
+requests             # Útil para integrações gerais
+psycopg2-binary
+gunicorn
+whitenoise

@@ -1,0 +1,16 @@
+# Python e Django
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+venv/
+.vscode/
+.idea/
+
+# Arquivos de mídia e estáticos gerados
+staticfiles/
+media/
+
+# Logs e arquivos do sistema
+*.log
+.DS_Store
