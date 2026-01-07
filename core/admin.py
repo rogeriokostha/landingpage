@@ -52,3 +52,14 @@ class ConfiguracaoAdmin(admin.ModelAdmin):
         if self.model.objects.exists():
             return False
         return True
+
+
+from .models import Portfolio  # Importe o novo modelo
+
+
+@admin.register(Portfolio)
+class PortfolioAdmin(admin.ModelAdmin):
+    list_display = ("titulo", "slug", "ativo")
+    prepopulated_fields = {
+        "slug": ("titulo",)
+    }  # Preenche o link sozinho baseado no título

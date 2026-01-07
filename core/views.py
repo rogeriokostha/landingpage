@@ -105,3 +105,11 @@ def robots_txt(request):
         "Allow: /",
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+def exemplo_medicina(request):
+    return render(request, "medicina.html")
+
+
+def lista_exemplos(request):
+    return render(request, "exemplos.html")

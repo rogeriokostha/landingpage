@@ -89,11 +89,12 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {% endif %}
     <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
-                <span class="font-bold text-white text-lg">D</span>
-            </div>
-            <span class="font-bold text-xl tracking-tight">Digitalizador</span>
+       <div class="flex items-center gap-3">
+            <img src="{% static 'logo.png' %}" 
+                 alt="Logo Digitalizador" 
+                 class="w-12 h-12 object-contain hover:scale-105 transition-transform">
+                 
+            <span class="font-bold text-xl tracking-tight">Digitalizador de idéias</span>
         </div>
 
         <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
@@ -131,7 +132,7 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
             </a>
 
-            <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-lg transition flex items-center justify-center gap-2 backdrop-blur-sm">
+            <a href="{% url 'lista_exemplos' %}" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold text-lg transition flex items-center justify-center gap-2 backdrop-blur-sm">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 Ver Exemplos
             </a>
@@ -410,11 +411,12 @@
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
             
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-orange to-brand-amber flex items-center justify-center">
-                    <span class="font-bold text-white text-xs">D</span>
-                </div>
-                <span class="font-bold text-white text-lg tracking-tight">Digitalizador</span>
-            </div>
+            <img src="{% static 'logo.png' %}" 
+                 alt="Logo Digitalizador" 
+                 class="w-10 h-10 object-contain">
+                 
+            <span class="font-bold text-white text-lg tracking-tight">Digitalizador</span>
+        </div>
 
             <div class="flex gap-8 text-gray-400 font-medium">
                 <a href="#servicos" class="hover:text-brand-orange transition">Serviços</a>

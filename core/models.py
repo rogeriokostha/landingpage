@@ -84,3 +84,32 @@ class Configuracao(models.Model):
     class Meta:
         verbose_name = "Configuração Geral"
         verbose_name_plural = "Configurações Gerais"
+
+
+class Portfolio(models.Model):
+    titulo = models.CharField("Título do Projeto", max_length=100)
+    descricao = models.CharField(
+        "Breve Descrição",
+        max_length=200,
+        help_text="Ex: Landing Page para Clínica de Estética",
+    )
+    slug = models.SlugField(
+        "Link da Página",
+        unique=True,
+        help_text="Ex: medicina-natural (será usado na URL)",
+    )
+    imagem_capa = models.ImageField(
+        "Capa do Projeto",
+        upload_to="portfolio/",
+        blank=True,
+        null=True,
+        help_text="Print da tela para aparecer na galeria",
+    )
+    ativo = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.titulo
+
+    class Meta:
+        verbose_name = "Item do Portfólio"
+        verbose_name_plural = "Portfólio"
