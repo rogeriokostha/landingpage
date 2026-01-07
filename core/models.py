@@ -39,3 +39,48 @@ class Rastreamento(models.Model):
 
     def __str__(self):
         return f"{self.acao} - {self.ip}"
+
+
+class Configuracao(models.Model):
+    # --- Configurações Básicas ---
+    titulo_site = models.CharField(
+        "Título do Site (Browser)",
+        max_length=70,
+        default="Meu Site Incrível",
+        help_text="Aparece na aba do navegador e no Google (Max 60-70 caracteres)",
+    )
+    descricao_site = models.TextField(
+        "Descrição SEO",
+        max_length=160,
+        blank=True,
+        null=True,
+        help_text="Resumo que aparece no Google (Max 160 caracteres)",
+    )
+    url_canonica = models.URLField(
+        "URL Canônica",
+        blank=True,
+        null=True,
+        help_text="Ex: https://digitalizadordeideias.com.br (Importante para evitar conteúdo duplicado)",
+    )
+    autor = models.CharField(
+        "Autor/Publisher",
+        max_length=100,
+        blank=True,
+        null=True,
+        help_text="Nome da empresa ou pessoa",
+    )
+
+    # --- Tags de Rastreamento ---
+    facebook_pixel_id = models.CharField(
+        "Facebook Pixel ID", max_length=50, blank=True, null=True
+    )
+    gtm_id = models.CharField(
+        "Google Tag Manager ID", max_length=50, blank=True, null=True
+    )
+
+    def __str__(self):
+        return "Configuração Geral do Site"
+
+    class Meta:
+        verbose_name = "Configuração Geral"
+        verbose_name_plural = "Configurações Gerais"

@@ -2,10 +2,54 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
+    {% if site_config.gtm_id %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ site_config.gtm_id }}');</script>
+    {% endif %}
+
+    {% if site_config.facebook_pixel_id %}
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '{{ site_config.facebook_pixel_id }}');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id={{ site_config.facebook_pixel_id }}&ev=PageView&noscript=1"
+    /></noscript>
+    {% endif %}
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Digitalizador de Ideias | Hero Dark Orange</title>
+
+    <title>{{ site_config.titulo_site|default:"Digitalizador de Ideias | Transformando sua visão em realidade com IA" }}</title>
     
+    <meta name="description" content="{{ site_config.descricao_site|default:'Crie landing pages de alta conversão e vídeos de apresentação com estratégia humana e inteligência artificial.' }}" />
+    
+    <meta name="author" content="{{ site_config.autor|default:'Digitalizador de Ideias' }}" />
+
+    <meta name="robots" content="index, follow" />
+
+    {% if site_config.url_canonica %}
+    <link rel="canonical" href="{{ site_config.url_canonica }}" />
+    {% else %}
+    <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+    {% endif %}
+
+    <meta property="og:site_name" content="{{ site_config.titulo_site|default:'Digitalizador de Ideias' }}" />
+    <meta property="og:title" content="{{ site_config.titulo_site|default:'Digitalizador de Ideias' }}" />
+    <meta property="og:description" content="{{ site_config.descricao_site|default:'Transforme seu negócio com Landing Pages e Vídeos criados por IA.' }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ site_config.url_canonica|default:request.build_absolute_uri }}" />
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,7 +63,7 @@
                     },
                     colors: {
                         brand: {
-                            bg: '#09090b',      // Preto fundo (inspirado na imagem)
+                            bg: '#09090b',      // Preto fundo
                             orange: '#f97316',  // Laranja vibrante principal
                             amber: '#fbbf24',   // Laranja mais claro para degradê
                             gray: '#a1a1aa',    // Cinza para textos secundários
@@ -40,7 +84,10 @@
     </script>
 </head>
 <body class="bg-brand-bg text-white font-sans antialiased selection:bg-brand-orange selection:text-white">
-
+{% if site_config.gtm_id %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site_config.gtm_id }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% endif %}
     <nav class="w-full py-6 px-6 md:px-12 flex justify-between items-center max-w-7xl mx-auto">
         <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20">
