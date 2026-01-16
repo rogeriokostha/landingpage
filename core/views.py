@@ -111,5 +111,17 @@ def exemplo_medicina(request):
     return render(request, "medicina.html")
 
 
+def modelo_clean(request):
+    return render(request, "modelo_clean.html")
+
+
 def lista_exemplos(request):
     return render(request, "exemplos.html")
+
+
+def videos_lucrativos(request):
+    return render(request, "videos_lucrativos.html")
+
+
+def protocolo_ia(request):
+    return render(request, "protocolo_ia.html")
