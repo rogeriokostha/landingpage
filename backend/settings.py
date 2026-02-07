@@ -121,13 +121,13 @@ USE_TZ = True
 # ==============================================================================
 # ARQUIVOS ESTÁTICOS (CSS, JS, IMAGES) - WHITENOISE
 # ==============================================================================
-WHITENOISE_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATIC_URL = "static/"
+
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "core/static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Ativa compressão e cache (Site muito mais rápido)
-STATICFILES_STORAGE = "whitenoise.storage.StaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
