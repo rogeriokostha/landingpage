@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% if TRACKING_IDS.gtm_id %}
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{ TRACKING_IDS.gtm_id }}');</script>
+    {% endif %}
+
+    {% if TRACKING_IDS.facebook_pixel_id %}
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '{{ TRACKING_IDS.facebook_pixel_id }}');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id={{ TRACKING_IDS.facebook_pixel_id }}&ev=PageView&noscript=1"
+    /></noscript>
+    {% endif %}
+
+    {% block head_content %}{% endblock %}
+</head>
+<body>
+    {% if TRACKING_IDS.gtm_id %}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ TRACKING_IDS.gtm_id }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {% endif %}
+
+    {% block body_content %}{% endblock %}
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>

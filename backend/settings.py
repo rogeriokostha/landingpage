@@ -31,6 +31,9 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 # ==============================================================================
 
 INSTALLED_APPS = [
+    "unfold",  # Deve vir primeiro!
+    "unfold.contrib.filters",  # Opcional: filtros melhores
+    "unfold.contrib.forms",
     "core",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -127,7 +130,9 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
+# Configuração de Mídia (Imagens que você sobe no Admin)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # ==============================================================================
 # CONFIGURAÇÃO DE E-MAIL (SMTP)
 # ==============================================================================
@@ -141,3 +146,25 @@ EMAIL_PORT = config("EMAIL_PORT", default=587, cast=int)
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True, cast=bool)
 EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
+
+
+UNFOLD = {
+    "SITE_TITLE": "Gerenciador Landing Page",
+    "SITE_HEADER": "Admin Digitalizador",
+    "SITE_SYMBOL": "rocket",  # Ícone do Heroicons
+    "COLORS": {
+        "primary": {
+            "50": "250 245 255",
+            "100": "243 232 255",
+            "200": "233 213 255",
+            "300": "216 180 254",
+            "400": "192 132 252",
+            "500": "168 85 247",  # Cor principal (roxo)
+            "600": "147 51 234",
+            "700": "126 34 206",
+            "800": "107 33 168",
+            "900": "88 28 135",
+            "950": "59 7 100",
+        },
+    },
+}

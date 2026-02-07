@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+{% extends "base.html" %}
+{% load static %}
+
+{% block head_content %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicina Natural | Exemplo</title>
@@ -14,41 +15,38 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'], // Fonte limpa
+                        sans: ['Inter', 'sans-serif'],
                     },
                 }
             }
         }
     </script>
-</head>
-<body class="font-sans text-white antialiased">
+{% endblock %}
+
+{% block body_content %}
+<div class="font-sans text-white antialiased">
 
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-        
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1574169208538-4f45163ade8d?q=80&w=1920&auto=format&fit=crop" 
                  alt="Fundo Natureza" 
                  class="w-full h-full object-cover blur-sm brightness-50 scale-105">
-            </div>
+        </div>
 
         <div class="relative z-10 w-full max-w-5xl p-10 md:p-16 rounded-3xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl text-center">
-            
             <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">
                 O CORPO NÃO ENFRAQUECE <br>
                 <span class="text-green-300">DO NADA</span>
             </h1>
-
             <p class="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
                 Ele responde ao que foi ignorado por anos. <br>
                 Quando a força se vai, quando o movimento se limita, a autonomia desaparece — o corpo não está falhando. Ele está respondendo.
             </p>
-
             <a href="https://wa.me/5517997747442?text=Ol%C3%A1%2C%20eu%20amei%20este%20modelo%21" 
                target="_blank"
                class="inline-block bg-[#E3DCD2] text-[#2C3E2E] font-semibold py-4 px-10 rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg">
                 Agendar uma conversa
             </a>
-
         </div>
 
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce opacity-70">
@@ -56,38 +54,20 @@
                 <div class="w-1 h-3 bg-white rounded-full"></div>
             </div>
         </div>
-
     </section>
-<section class="relative bg-[#EAE5DC] text-[#2C3E2E] py-20 px-6 md:px-12">
-        
+
+    <section class="relative bg-[#EAE5DC] text-[#2C3E2E] py-20 px-6 md:px-12">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            
             <div>
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-[#1A2F23]">
-                    O corpo sempre avisa
-                </h2>
-                
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 tracking-tight text-[#1A2F23]">O corpo sempre avisa</h2>
                 <div class="space-y-6 text-lg text-[#4A5D50] leading-relaxed">
-                    <p>
-                        Antes de qualquer diagnóstico, antes de qualquer sintoma se tornar irreversível, 
-                        <strong class="text-[#1A2F23] font-semibold">o corpo já estava falando.</strong>
-                    </p>
-                    <p>
-                        A inflamação silenciosa. O sono que não restaura. A digestão que nunca foi investigada. 
-                        O estresse que virou rotina.
-                    </p>
-                    <p class="font-semibold text-[#1A2F23] text-xl pt-2">
-                        E então, um dia, a força não volta mais.
-                    </p>
-                    <p>
-                        Não porque o corpo desistiu. Mas porque os sistemas que sustentam a vitalidade 
-                        foram ignorados até o limite.
-                    </p>
+                    <p>Antes de qualquer diagnóstico, antes de qualquer sintoma se tornar irreversível, <strong class="text-[#1A2F23] font-semibold">o corpo já estava falando.</strong></p>
+                    <p>A inflamação silenciosa. O sono que não restaura. A digestão que nunca foi investigada. O estresse que virou rotina.</p>
+                    <p class="font-semibold text-[#1A2F23] text-xl pt-2">E então, um dia, a força não volta mais.</p>
+                    <p>Não porque o corpo desistiu. Mas porque os sistemas que sustentam a vitalidade foram ignorados até o limite.</p>
                 </div>
             </div>
-
             <div class="flex flex-col gap-4">
-                
                 <div class="bg-[#E3DCD2] p-6 rounded-2xl flex gap-5 hover:bg-white transition-colors duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#D1C8BC] flex items-center justify-center shrink-0 text-[#2C3E2E]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
@@ -97,7 +77,6 @@
                         <p class="text-sm text-[#4A5D50]">A base silenciosa de quase todas as doenças degenerativas.</p>
                     </div>
                 </div>
-
                 <div class="bg-[#E3DCD2] p-6 rounded-2xl flex gap-5 hover:bg-white transition-colors duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#D1C8BC] flex items-center justify-center shrink-0 text-[#2C3E2E]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
@@ -107,7 +86,6 @@
                         <p class="text-sm text-[#4A5D50]">Quando o corpo perde a capacidade de gerar energia.</p>
                     </div>
                 </div>
-
                 <div class="bg-[#E3DCD2] p-6 rounded-2xl flex gap-5 hover:bg-white transition-colors duration-300 cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#D1C8BC] flex items-center justify-center shrink-0 text-[#2C3E2E]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
@@ -117,87 +95,52 @@
                         <p class="text-sm text-[#4A5D50]">Quando órgãos param de se comunicar harmoniosamente.</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section class="bg-[#1A2F23] py-24 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            
-            <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-[#E3DCD2]">
-                A verdade que raramente é dita
-            </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-16 text-lg font-light">
-                Estas condições não são destinos inevitáveis. São respostas do corpo a anos de desequilíbrio sistêmico.
-            </p>
-
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight text-[#E3DCD2]">A verdade que raramente é dita</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-16 text-lg font-light">Estas condições não são destinos inevitáveis. São respostas do corpo a anos de desequilíbrio sistêmico.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">Sarcopenia</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Perda progressiva de massa muscular e força, sinalizando falha na síntese proteica.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Perda progressiva de massa muscular e força, sinalizando falha na síntese proteica.</p>
                 </div>
-
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">AVC</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Eventos cerebrovasculares ligados diretamente à inflamação endotelial crônica.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Eventos cerebrovasculares ligados diretamente à inflamação endotelial crônica.</p>
                 </div>
-
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">Diabetes</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Desregulação metabólica severa e resistência insulínica ignorada por décadas.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Desregulação metabólica severa e resistência insulínica ignorada por décadas.</p>
                 </div>
-
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">Alzheimer</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Muitas vezes chamado de "Diabetes Tipo 3", ligado à neuroinflamação e glicação.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Muitas vezes chamado de "Diabetes Tipo 3", ligado à neuroinflamação e glicação.</p>
                 </div>
-
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">Parkinson</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Disfunção neuromuscular com raízes profundas no estresse oxidativo mitocondrial.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Disfunção neuromuscular com raízes profundas no estresse oxidativo mitocondrial.</p>
                 </div>
-
                 <div class="group p-8 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 transition-all duration-300">
                     <h3 class="text-xl font-bold text-[#E3DCD2] mb-3 group-hover:text-white">Fibromialgia</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">
-                        Dores difusas e fadiga crônica: o grito do corpo quando o sistema de dor entra em colapso.
-                    </p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Dores difusas e fadiga crônica: o grito do corpo quando o sistema de dor entra em colapso.</p>
                 </div>
-
             </div>
-
             <div class="mt-16 text-center">
-                <p class="text-[#E3DCD2] italic text-lg opacity-80 font-serif">
-                    "O foco não está no diagnóstico. Está na causa sistêmica que permitiu que ele existisse."
-                </p>
+                <p class="text-[#E3DCD2] italic text-lg opacity-80 font-serif">"O foco não está no diagnóstico. Está na causa sistêmica que permitiu que ele existisse."</p>
             </div>
-
         </div>
     </section>
+
     <section class="relative bg-[#15261D] py-24 px-6 border-t border-white/5">
-        
         <div class="max-w-5xl mx-auto">
-            
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-[#E3DCD2] mb-6 leading-tight">
-                    Quando o corpo perde a força, <br>
-                    <span class="text-white/40">a identidade cai junto.</span>
-                </h2>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-[#E3DCD2] mb-6 leading-tight">Quando o corpo perde a força, <br><span class="text-white/40">a identidade cai junto.</span></h2>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path></svg>
@@ -207,7 +150,6 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">A capacidade simples de cuidar de si mesmo sem pedir licença.</p>
                     </div>
                 </div>
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -217,7 +159,6 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">O silêncio constrangedor de depender de outros para o básico.</p>
                     </div>
                 </div>
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
@@ -227,7 +168,6 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">A certeza de que suas pernas vão te segurar se você levantar.</p>
                     </div>
                 </div>
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path></svg>
@@ -237,7 +177,6 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">Deixar de ser "quem faz" para se tornar "quem precisa de ajuda".</p>
                     </div>
                 </div>
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
@@ -247,7 +186,6 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">O direito básico de ir e vir sem depender da agenda de ninguém.</p>
                     </div>
                 </div>
-
                 <div class="group flex items-start p-6 rounded-2xl border border-white/5 bg-white/5 hover:bg-[#E3DCD2] hover:scale-[1.02] transition-all duration-500 cursor-default">
                     <div class="mr-5 p-3 rounded-full bg-white/10 text-[#E3DCD2] group-hover:bg-[#1A2F23] group-hover:text-[#E3DCD2] transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
@@ -257,329 +195,218 @@
                         <p class="text-sm text-gray-400 group-hover:text-[#2C3E2E]">Olhar no espelho e ver a pessoa que você era, não um paciente.</p>
                     </div>
                 </div>
-
             </div>
-
             <div class="mt-20 text-center">
-                <p class="text-xl md:text-2xl font-serif text-[#E3DCD2] opacity-90">
-                    "Não se trata apenas de tratar sintomas. <br>
-                    <strong class="border-b-2 border-[#E3DCD2]/30 pb-1">Trata-se de devolver a vida.</strong>"
-                </p>
+                <p class="text-xl md:text-2xl font-serif text-[#E3DCD2] opacity-90">"Não se trata apenas de tratar sintomas. <br><strong class="border-b-2 border-[#E3DCD2]/30 pb-1">Trata-se de devolver a vida.</strong>"</p>
             </div>
-
         </div>
     </section>
+
     <section class="bg-[#EAE5DC] py-24 px-6 text-[#1A2F23]">
         <div class="max-w-6xl mx-auto">
-            
             <div class="text-center mb-16 max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
-                    Uma abordagem que não trata <br>
-                    pessoas como protocolos
-                </h2>
-                <p class="text-lg text-[#4A5D50] leading-relaxed">
-                    Integramos saberes ancestrais e ciência moderna para compreender o corpo 
-                    como um sistema vivo, não como uma coleção de sintomas isolados.
-                </p>
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">Uma abordagem que não trata <br>pessoas como protocolos</h2>
+                <p class="text-lg text-[#4A5D50] leading-relaxed">Integramos saberes ancestrais e ciência moderna para compreender o corpo como um sistema vivo, não como uma coleção de sintomas isolados.</p>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-                
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Biomedicina</h3>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Medicina Chinesa</h3>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Acupuntura</h3>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Ozonioterapia</h3>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Naturopatia</h3>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-[#1A2F23]">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Saberes indígenas</h3>
                 </div>
-
             </div>
-
             <div class="text-center">
-                <p class="italic text-[#4A5D50] font-serif text-lg opacity-80">
-                    "Cada saber oferece uma perspectiva única. Juntos, eles <br>
-                    revelam a verdade completa sobre o que está acontecendo."
-                </p>
+                <p class="italic text-[#4A5D50] font-serif text-lg opacity-80">"Cada saber oferece uma perspectiva única. Juntos, eles <br>revelam a verdade completa sobre o que está acontecendo."</p>
             </div>
-
         </div>
     </section>
+
     <section class="relative bg-[#1A2F23] py-24 px-6 flex items-center justify-center">
-        
         <div class="relative z-10 w-full max-w-6xl p-10 md:p-20 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl text-center">
-            
-            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-[#E3DCD2]">
-                O foco não é tratar a doença
-            </h2>
-
-            <p class="text-lg md:text-xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">
-                É restaurar os sistemas que, quando equilibrados, permitem que o corpo se cure naturalmente.
-            </p>
-
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-[#E3DCD2]">O foco não é tratar a doença</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-16 max-w-3xl mx-auto leading-relaxed">É restaurar os sistemas que, quando equilibrados, permitem que o corpo se cure naturalmente.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left max-w-5xl mx-auto">
-                
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Recuperação pós-AVC e reabilitação neurológica</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Reversão de sarcopenia e restauração da força</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Modulação de processos inflamatórios crônicos</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Regulação metabólica em diabetes e síndrome metabólica</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Suporte em processos neurodegenerativos</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Restauração da vitalidade e energia celular</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Fortalecimento da imunidade sistêmica</p>
                 </div>
-
                 <div class="flex items-start gap-4">
                     <span class="mt-2.5 w-2 h-2 rounded-full bg-[#E3DCD2] shrink-0 shadow-[0_0_8px_rgba(227,220,210,0.5)]"></span>
                     <p class="text-gray-300 text-lg">Regeneração de tecidos e cicatrização avançada</p>
                 </div>
-
             </div>
-
             <div class="mt-20">
-                <p class="text-[#E3DCD2] italic opacity-80 font-serif text-lg tracking-wide">
-                    Baseado em evidências clínicas e saberes validados por gerações
-                </p>
+                <p class="text-[#E3DCD2] italic opacity-80 font-serif text-lg tracking-wide">Baseado em evidências clínicas e saberes validados por gerações</p>
             </div>
-
         </div>
     </section>
-   <section class="bg-[#EAE5DC] py-24 px-6 text-[#1A2F23]">
-        <div class="max-w-6xl mx-auto">
-            
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">
-                    O que muda quando o corpo responde
-                </h2>
-                <p class="text-lg text-[#4A5D50] leading-relaxed">
-                    Não prometemos milagres. Oferecemos caminhos reais para restauração.
-                </p>
-            </div>
 
+    <section class="bg-[#EAE5DC] py-24 px-6 text-[#1A2F23]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-4 leading-tight">O que muda quando o corpo responde</h2>
+                <p class="text-lg text-[#4A5D50] leading-relaxed">Não prometemos milagres. Oferecemos caminhos reais para restauração.</p>
+            </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Força restaurada</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Recuperação da capacidade muscular e resistência física para as tarefas do dia a dia.
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Recuperação da capacidade muscular e resistência física para as tarefas do dia a dia.</p>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Autonomia recuperada</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Voltar a fazer o que importa sem depender de outros para o básico.
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Voltar a fazer o que importa sem depender de outros para o básico.</p>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Clareza mental</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Melhora cognitiva e foco restaurado, eliminando o "nevoeiro mental".
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Melhora cognitiva e foco restaurado, eliminando o "nevoeiro mental".</p>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Vitalidade renovada</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Energia real que permite viver plenamente, e não apenas sobreviver ao dia.
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Energia real que permite viver plenamente, e não apenas sobreviver ao dia.</p>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Inflamação controlada</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Redução mensurável de processos inflamatórios sistêmicos e dores crônicas.
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Redução mensurável de processos inflamatórios sistêmicos e dores crônicas.</p>
                 </div>
-
                 <div class="bg-[#F4F1EB] p-8 rounded-2xl hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-default">
                     <div class="w-12 h-12 rounded-full bg-[#EAE5DC] flex items-center justify-center mb-6 text-[#1A2F23] group-hover:scale-110 transition-transform">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold mb-3">Dignidade preservada</h3>
-                    <p class="text-sm text-[#4A5D50] leading-relaxed">
-                        Manter a identidade, o senso de si mesmo e o orgulho de sua história.
-                    </p>
+                    <p class="text-sm text-[#4A5D50] leading-relaxed">Manter a identidade, o senso de si mesmo e o orgulho de sua história.</p>
                 </div>
-
             </div>
         </div>
     </section>
+
     <section class="relative bg-[#1A2F23] py-24 px-6 border-t border-white/5">
         <div class="max-w-4xl mx-auto text-center">
-            
-            <h2 class="text-3xl md:text-5xl font-serif italic text-[#E3DCD2] mb-4 opacity-90">
-                Este não é um tratamento para todos
-            </h2>
-            <p class="text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">
-                Trabalhamos com pessoas que estão prontas para uma transformação real, 
-                não apenas um alívio temporário.
-            </p>
-
+            <h2 class="text-3xl md:text-5xl font-serif italic text-[#E3DCD2] mb-4 opacity-90">Este não é um tratamento para todos</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed">Trabalhamos com pessoas que estão prontas para uma transformação real, não apenas um alívio temporário.</p>
             <div class="bg-white/5 border border-white/10 rounded-3xl p-10 md:p-14 backdrop-blur-sm text-left shadow-2xl">
-                <h3 class="text-xl font-bold text-white mb-10 text-center uppercase tracking-widest text-xs">
-                    Este caminho é para quem busca:
-                </h3>
-
+                <h3 class="text-xl font-bold text-white mb-10 text-center uppercase tracking-widest text-xs">Este caminho é para quem busca:</h3>
                 <div class="space-y-6">
                     <div class="flex items-start group">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full border border-[#E3DCD2]/30 flex items-center justify-center mt-1 group-hover:bg-[#E3DCD2] transition-colors">
                             <svg class="w-3 h-3 text-[#1A2F23] opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
                         </div>
-                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">
-                            Disposição para investigar <strong class="text-[#E3DCD2] font-normal">causas</strong>, não apenas sintomas.
-                        </p>
+                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">Disposição para investigar <strong class="text-[#E3DCD2] font-normal">causas</strong>, não apenas sintomas.</p>
                     </div>
-
                     <div class="flex items-start group">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full border border-[#E3DCD2]/30 flex items-center justify-center mt-1 group-hover:bg-[#E3DCD2] transition-colors">
                             <svg class="w-3 h-3 text-[#1A2F23] opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
                         </div>
-                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">
-                            Abertura para abordagens que vão além do convencional.
-                        </p>
+                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">Abertura para abordagens que vão além do convencional.</p>
                     </div>
-
                     <div class="flex items-start group">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full border border-[#E3DCD2]/30 flex items-center justify-center mt-1 group-hover:bg-[#E3DCD2] transition-colors">
                             <svg class="w-3 h-3 text-[#1A2F23] opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
                         </div>
-                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">
-                            Comprometimento com um processo, não uma "pílula mágica".
-                        </p>
+                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">Comprometimento com um processo, não uma "pílula mágica".</p>
                     </div>
-
                     <div class="flex items-start group">
                         <div class="flex-shrink-0 w-6 h-6 rounded-full border border-[#E3DCD2]/30 flex items-center justify-center mt-1 group-hover:bg-[#E3DCD2] transition-colors">
                             <svg class="w-3 h-3 text-[#1A2F23] opacity-0 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
                         </div>
-                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">
-                            Compreensão de que cada corpo responde em seu próprio tempo.
-                        </p>
+                        <p class="ml-4 text-gray-300 text-lg group-hover:text-white transition-colors">Compreensão de que cada corpo responde em seu próprio tempo.</p>
                     </div>
                 </div>
-
                 <div class="mt-10 pt-8 border-t border-white/10 text-center">
-                    <p class="text-sm text-gray-400">
-                        Se isso ressoa com você, estamos prontos para caminhar juntos.
-                    </p>
+                    <p class="text-sm text-gray-400">Se isso ressoa com você, estamos prontos para caminhar juntos.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section class="relative bg-[#1A2F23] pb-32 px-6">
         <div class="max-w-3xl mx-auto text-center">
-            
             <div class="bg-[#E3DCD2]/5 rounded-3xl p-10 md:p-16 border border-[#E3DCD2]/10 backdrop-blur-xl">
-                
-                <h2 class="text-4xl md:text-5xl font-serif text-[#E3DCD2] mb-6 leading-tight">
-                    O primeiro passo não é uma sessão. <br>
-                    <span class="italic text-white">É uma conversa.</span>
-                </h2>
-                
-                <p class="text-gray-400 mb-10 leading-relaxed">
-                    Uma avaliação cuidadosa, humana e profunda do que está acontecendo com você. 
-                    Sem pressa. Sem protocolo padrão. Apenas escuta e compreensão.
-                </p>
-
+                <h2 class="text-4xl md:text-5xl font-serif text-[#E3DCD2] mb-6 leading-tight">O primeiro passo não é uma sessão. <br><span class="italic text-white">É uma conversa.</span></h2>
+                <p class="text-gray-400 mb-10 leading-relaxed">Uma avaliação cuidadosa, humana e profunda do que está acontecendo com você. Sem pressa. Sem protocolo padrão. Apenas escuta e compreensão.</p>
                 <a href="https://wa.me/5517997747442?text=Ol%C3%A1%2C%20eu%20amei%20este%20modelo%21" 
                    target="_blank"
                    class="relative inline-flex group">
-                    
                    <div class="absolute transition-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#E3DCD2] to-[#cbbca8] rounded-full blur-lg group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt"></div>
-                    
-                   <button class="relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-[#1A2F23] transition-all duration-200 bg-[#E3DCD2] font-sans rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900">
-                        Agendar Avaliação
-                   </button>
+                   <button class="relative inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-[#1A2F23] transition-all duration-200 bg-[#E3DCD2] font-sans rounded-full">Agendar Avaliação</button>
                 </a>
-                
-                <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">
-                    Atendimento Presencial e Online
-                </p>
-
+                <p class="mt-6 text-xs text-gray-500 uppercase tracking-widest">Atendimento Presencial e Online</p>
             </div>
-
         </div>
     </section>
 
     <footer class="bg-[#15261d] py-10 border-t border-white/5 text-center text-gray-500 text-sm">
         <p>&copy; 2024 Medicina Natural Integrativa. Todos os direitos reservados.</p>
     </footer>
-    </body>
-</html>
+
+</div>
+{% endblock %}

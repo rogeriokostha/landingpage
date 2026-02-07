@@ -1,65 +1,72 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import Usuario, Rastreamento, Configuracao
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from unfold.admin import ModelAdmin
+from unfold.forms import UserChangeForm, UserCreationForm
+from .models import Usuario, Rastreamento, Configuracao, Portfolio
 
-# 1. Configura o Admin do Usuário (já que personalizamos ele)
-admin.site.register(Usuario, UserAdmin)
+# 1. Configura o Admin do Usuário (Versão Unfold)
+@admin.register(Usuario)
+class UsuarioAdmin(BaseUserAdmin, ModelAdmin):
+    form = UserChangeForm
+    add_form = UserCreationForm
+    change_password_form = UserChangeForm
 
 
 # 2. Configura o Admin do Rastreamento (O Espião)
 @admin.register(Rastreamento)
-class RastreamentoAdmin(admin.ModelAdmin):
+class RastreamentoAdmin(ModelAdmin):
     # Colunas que vão aparecer na lista
     list_display = ("ip", "acao", "cidade", "estado", "data_criacao")
 
-    # Filtros laterais (para você filtrar só quem clicou no Whatsapp, por exemplo)
+    # Filtros laterais com estilo Unfold
     list_filter = ("acao", "data_criacao", "estado")
 
-    # Barra de pesquisa (procurar por IP ou Cidade)
+    # Barra de pesquisa
     search_fields = ("ip", "cidade", "nome_lead")
 
-    # Deixa os campos apenas como leitura (para ninguém adulterar o histórico)
+    # Deixa os campos apenas como leitura
     readonly_fields = ("ip", "cidade", "estado", "dispositivo", "acao", "data_criacao")
 
-    # Remove o botão de "Adicionar" (já que os dados entram sozinhos pelo site)
+    # Estilização: Remove o botão de "Adicionar"
     def has_add_permission(self, request):
         return False
 
 
+# 3. Configurações da Landing Page
 @admin.register(Configuracao)
-class ConfiguracaoAdmin(admin.ModelAdmin):
-    # Organiza os campos em grupos (SEO vs Analytics)
+class ConfiguracaoAdmin(ModelAdmin):
+    # Organiza os campos em grupos (fieldsets no Unfold ficam muito elegantes)
     fieldsets = (
         (
             "Informações Básicas (SEO)",
             {
                 "fields": ("titulo_site", "descricao_site", "autor", "url_canonica"),
-                "description": "Estes dados aparecem no Google e na aba do navegador.",
+                "classes": ["tab"], # Opcional: organiza em abas no Unfold
             },
         ),
         (
             "Rastreamento & Marketing",
             {
                 "fields": ("facebook_pixel_id", "gtm_id"),
-                "description": "IDs para integração com Facebook Ads e Google Analytics.",
             },
         ),
     )
 
-    # Impede de criar mais de uma configuração (Singleton)
+    # Singleton: Impede de criar mais de uma configuração
     def has_add_permission(self, request):
-        # Se já existe 1 registro, bloqueia o botão de adicionar
         if self.model.objects.exists():
             return False
         return True
 
 
-from .models import Portfolio  # Importe o novo modelo
-
-
+# 4. Portfólio
 @admin.register(Portfolio)
-class PortfolioAdmin(admin.ModelAdmin):
+class PortfolioAdmin(ModelAdmin):
     list_display = ("titulo", "slug", "ativo")
+    
+    # No Unfold, campos ativos (booleano) ganham um visual de toggle/badge automático
+    list_editable = ["ativo"] 
+    
     prepopulated_fields = {
         "slug": ("titulo",)
-    }  # Preenche o link sozinho baseado no título
+    }

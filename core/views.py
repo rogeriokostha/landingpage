@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
-from .models import Rastreamento
+from .models import Rastreamento, Portfolio
 from ipware import get_client_ip  # Biblioteca que pega o IP real mesmo no Docker
 import requests  # Para consultar a API de localização (GeoIP)
 
@@ -116,8 +116,11 @@ def modelo_clean(request):
 
 
 def lista_exemplos(request):
-    return render(request, "exemplos.html")
-
+    # Buscamos apenas os itens marcados como ativos no Admin
+    projetos = Portfolio.objects.filter(ativo=True).order_by('ordem')
+    
+    # O terceiro argumento {'projetos': projetos} é o que "preenche" o HTML
+    return render(request, 'exemplos.html', {'projetos': projetos})
 
 def videos_lucrativos(request):
     return render(request, "videos_lucrativos.html")
@@ -125,3 +128,6 @@ def videos_lucrativos(request):
 
 def protocolo_ia(request):
     return render(request, "protocolo_ia.html")
+
+def obrigado(request):
+    return render(request, "obrigado.html")

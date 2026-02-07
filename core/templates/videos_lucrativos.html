@@ -1,7 +1,7 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+
+{% block head_content %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vídeos Lucrativos com IA | Digitalizador</title>
@@ -16,56 +16,47 @@
         .gradient-text { background: linear-gradient(to right, #F97316, #F59E0B); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glow { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
     </style>
-</head>
-<body class="bg-[#09090b] text-gray-100 font-sans">
+{% endblock %}
+
+{% block body_content %}
+<div class="bg-[#09090b] text-gray-100 font-sans">
 
     <header class="relative overflow-hidden pt-12 pb-20 lg:pt-24 lg:pb-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                
                 <div class="space-y-8 z-10">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-bold uppercase tracking-wider">
                         <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
                         Método Exclusivo IA
                     </div>
-                    
                     <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight text-white">
                         A Mentira Silenciosa do Marketing Digital: <br>
                         <span class="gradient-text">Você NÃO precisa aparecer para vender.</span>
                     </h1>
-                    
                     <p class="text-lg text-gray-400 leading-relaxed">
                         Descubra como criar apresentadores ultra-realistas. Clone sua voz, gere roteiros persuasivos e transforme fotos estáticas em vídeos de alta conversão. 
                         <br><strong class="text-white">Sem câmera. Sem estúdio. Sem vergonha.</strong>
                     </p>
-
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="SEU_LINK_KIWIFY_AQUI" 
                            class="inline-flex justify-center items-center py-4 px-8 text-base font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl hover:scale-105 transition-all duration-300 shadow-lg glow w-full sm:w-auto">
                             QUERO VENDER SEM APARECER
                         </a>
                     </div>
-                    
                     <p class="text-xs text-gray-500">🔒 Acesso imediato + Garantia de 7 dias</p>
                 </div>
 
                 <div class="relative lg:h-[600px] w-full flex items-center justify-center">
                     <div class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-purple-500/10 rounded-2xl blur-3xl opacity-30"></div>
-                    
                     <div class="relative w-full max-w-sm rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
                         <video autoplay loop muted playsinline class="w-full h-full object-cover">
                             <source src="{% static 'video_venda.mp4' %}" type="video/mp4">
-                            Seu navegador não suporta vídeos.
                         </video>
-                        
                         <div class="absolute bottom-4 left-0 right-0 text-center">
-                            <span class="bg-black/70 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-bold border border-white/10">
-                                📸 Foto Estática ➡️ 🎥 Vídeo Falante
-                            </span>
+                            <span class="bg-black/70 backdrop-blur-sm text-white px-4 py-1 rounded-full text-xs font-bold border border-white/10">📸 Foto Estática ➡️ 🎥 Vídeo Falante</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </header>
@@ -73,7 +64,6 @@
     <section class="py-20 bg-black/50 border-y border-white/5">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-8">Você não trava por falta de capacidade.<br>Você trava por <span class="text-orange-500">excesso de exposição.</span></h2>
-            
             <div class="space-y-6 text-lg text-gray-400 text-left">
                 <p>Existe uma pressão invisível dizendo que você só cresce se fizer dancinha ou virar blogueiro. <strong class="text-white">Isso não é verdade.</strong></p>
                 <p>Talvez você tenha um produto incrível ou um serviço de ouro, mas adia o começo porque ligar a câmera te desconforta. O resultado? O mercado não espera, e o concorrente menos qualificado (mas sem vergonha) leva o cliente.</p>
@@ -85,26 +75,22 @@
     <section class="py-20">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">O Arsenal <span class="gradient-text">Vídeos Lucrativos</span></h2>
-            
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all">
                     <div class="text-4xl mb-4">🤖</div>
                     <h3 class="text-xl font-bold text-white mb-2">O Protocolo Visual</h3>
                     <p class="text-gray-400">O passo a passo exato para pegar qualquer foto e criar movimentos labiais perfeitos, piscadas naturais e micro-expressões que convencem.</p>
                 </div>
-
                 <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all">
                     <div class="text-4xl mb-4">🎙️</div>
                     <h3 class="text-xl font-bold text-white mb-2">Clonagem de Voz & Dublagem</h3>
                     <p class="text-gray-400">Aprenda a usar IA para falar seu texto com a <strong>sua própria voz</strong> (sem gravar nada) ou use narradores profissionais ultra-realistas.</p>
                 </div>
-
                 <div class="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-orange-500/50 transition-all">
                     <div class="text-4xl mb-4">📝</div>
                     <h3 class="text-xl font-bold text-white mb-2">Roteiros Infinitos</h3>
                     <p class="text-gray-400">Nunca mais tenha bloqueio criativo. Vou te ensinar a gerar scripts de vendas persuasivos em segundos usando inteligência artificial.</p>
                 </div>
-
                 <div class="p-8 rounded-2xl bg-gradient-to-br from-orange-900/20 to-black border border-orange-500/30 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1">BÔNUS VIP</div>
                     <div class="text-4xl mb-4">🎁</div>
@@ -117,20 +103,12 @@
 
     <section class="py-20 border-t border-b border-white/5 bg-[#0a0a0a]">
         <div class="max-w-6xl mx-auto px-6">
-            
             <div class="text-center mb-16">
-                <div class="inline-block px-3 py-1 mb-4 border border-green-500/30 rounded-full bg-green-500/10 text-green-400 text-xs font-bold uppercase tracking-widest">
-                    Resultados Reais
-                </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Funciona mesmo para quem <br>
-                    <span class="text-orange-500">nunca editou um vídeo?</span>
-                </h2>
+                <div class="inline-block px-3 py-1 mb-4 border border-green-500/30 rounded-full bg-green-500/10 text-green-400 text-xs font-bold uppercase tracking-widest">Resultados Reais</div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Funciona mesmo para quem <br><span class="text-orange-500">nunca editou um vídeo?</span></h2>
                 <p class="text-gray-400">Veja o que quem já aplicou o método está falando:</p>
             </div>
-
             <div class="grid md:grid-cols-3 gap-8">
-                
                 <div class="bg-[#121212] border border-white/10 rounded-3xl p-6 relative group hover:border-orange-500/30 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-xs font-bold text-white">M</div>
@@ -140,20 +118,13 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            Cara, eu tava travado há meses sem postar. Fiz o tutorial da aula 2 e o vídeo ficou insano! 🤯
-                        </div>
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            Ninguém diz que é IA. Minha esposa achou que eu tinha contratado alguém kkkk
-                        </div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">Cara, eu tava travado há meses sem postar. Fiz o tutorial da aula 2 e o vídeo ficou insano! 🤯</div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">Ninguém diz que é IA. Minha esposa achou que eu tinha contratado alguém kkkk</div>
                     </div>
                     <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl backdrop-blur-sm cursor-pointer">
-                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">
-                            📸 Colocar Print Real Aqui
-                        </p>
+                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">📸 Colocar Print Real Aqui</p>
                     </div>
                 </div>
-
                 <div class="bg-[#121212] border border-white/10 rounded-3xl p-6 relative group hover:border-orange-500/30 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-xs font-bold text-white">J</div>
@@ -163,23 +134,14 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            O engajamento do meu Reels triplicou. Antes eu tinha vergonha de aparecer mostrando as roupas.
-                        </div>
-                        <div class="bg-[#1F2C33] border border-green-500/20 p-2 rounded text-center">
-                            <span class="text-xs text-green-400 font-bold">Audio 0:14 🔊</span>
-                        </div>
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            Agora a modelo virtual faz tudo. Obrigada demais! 🙏
-                        </div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">O engajamento do meu Reels triplicou. Antes eu tinha vergonha de aparecer mostrando as roupas.</div>
+                        <div class="bg-[#1F2C33] border border-green-500/20 p-2 rounded text-center"><span class="text-xs text-green-400 font-bold">Audio 0:14 🔊</span></div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">Agora a modelo virtual faz tudo. Obrigada demais! 🙏</div>
                     </div>
                     <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl backdrop-blur-sm cursor-pointer">
-                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">
-                            📸 Colocar Print Real Aqui
-                        </p>
+                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">📸 Colocar Print Real Aqui</p>
                     </div>
                 </div>
-
                 <div class="bg-[#121212] border border-white/10 rounded-3xl p-6 relative group hover:border-orange-500/30 transition-all duration-300">
                     <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-4">
                         <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center text-xs font-bold text-white">R</div>
@@ -189,45 +151,27 @@
                         </div>
                     </div>
                     <div class="space-y-3">
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            Só pra avisar: Testei o criativo novo com a voz clonada e o CPA caiu pela metade.
-                        </div>
-                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">
-                            Vou escalar essa oferta hoje. Esse pack de prompts salvou minha vida. Tmj! 🚀
-                        </div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">Só pra avisar: Testei o criativo novo com a voz clonada e o CPA caiu pela metade.</div>
+                        <div class="bg-[#202020] p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl text-gray-300 text-sm leading-relaxed">Vou escalar essa oferta hoje. Esse pack de prompts salvou minha vida. Tmj! 🚀</div>
                     </div>
                     <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl backdrop-blur-sm cursor-pointer">
-                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">
-                            📸 Colocar Print Real Aqui
-                        </p>
+                        <p class="text-white text-xs font-bold border border-white/20 px-4 py-2 rounded-full">📸 Colocar Print Real Aqui</p>
                     </div>
                 </div>
-
             </div>
-            
-            <div class="mt-12 text-center text-gray-500 text-sm">
-                * Resultados reais de alunos da primeira turma.
-            </div>
-
+            <div class="mt-12 text-center text-gray-500 text-sm">* Resultados reais de alunos da primeira turma.</div>
         </div>
     </section>
 
     <section class="py-20 bg-white/5">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-12">Quanto custa sua liberdade digital?</h2>
-            
             <div class="bg-black border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
                 <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-20 bg-orange-500/20 blur-3xl"></div>
-
                 <p class="text-gray-500 mb-2 line-through text-lg">De R$ 297,00 por apenas:</p>
                 <div class="text-6xl font-extrabold text-white mb-4 tracking-tight">R$ 97<span class="text-2xl text-gray-500 font-normal">,00</span></div>
                 <p class="text-gray-400 mb-8">Pagamento único • Acesso Vitalício</p>
-
-                <a href="SEU_LINK_KIWIFY_AQUI" 
-                   class="inline-block w-full md:w-auto py-5 px-12 text-xl font-bold text-white bg-[#22c55e] hover:bg-[#16a34a] rounded-xl transition-all shadow-lg hover:scale-105">
-                    QUERO COMEÇAR AGORA
-                </a>
-                
+                <a href="SEU_LINK_KIWIFY_AQUI" class="inline-block w-full md:w-auto py-5 px-12 text-xl font-bold text-white bg-[#22c55e] hover:bg-[#16a34a] rounded-xl transition-all shadow-lg hover:scale-105">QUERO COMEÇAR AGORA</a>
                 <div class="mt-6 flex justify-center gap-4 text-sm text-gray-500">
                     <span class="flex items-center gap-1">🔒 Compra Segura</span>
                     <span class="flex items-center gap-1">⚡ Entrega Imediata</span>
@@ -241,24 +185,15 @@
             <h2 class="text-2xl font-bold text-center mb-10">Dúvidas Frequentes</h2>
             <div class="space-y-4">
                 <details class="bg-white/5 rounded-lg p-4 group cursor-pointer">
-                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">
-                        Preciso saber editar vídeos?
-                        <span class="text-orange-500">+</span>
-                    </summary>
+                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">Preciso saber editar vídeos?<span class="text-orange-500">+</span></summary>
                     <p class="text-gray-400 mt-2 text-sm">Não. O método foi criado para iniciantes absolutos. A IA faz o trabalho pesado.</p>
                 </details>
                 <details class="bg-white/5 rounded-lg p-4 group cursor-pointer">
-                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">
-                        Funciona para qualquer negócio?
-                        <span class="text-orange-500">+</span>
-                    </summary>
+                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">Funciona para qualquer negócio?<span class="text-orange-500">+</span></summary>
                     <p class="text-gray-400 mt-2 text-sm">Sim. Produtos físicos, serviços, dropshipping ou infoprodutos.</p>
                 </details>
                 <details class="bg-white/5 rounded-lg p-4 group cursor-pointer">
-                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">
-                        Preciso de um computador potente?
-                        <span class="text-orange-500">+</span>
-                    </summary>
+                    <summary class="font-bold text-gray-200 list-none flex justify-between items-center">Preciso de um computador potente?<span class="text-orange-500">+</span></summary>
                     <p class="text-gray-400 mt-2 text-sm">Não. As ferramentas rodam na nuvem (no navegador). Você só precisa de internet.</p>
                 </details>
             </div>
@@ -268,6 +203,5 @@
     <footer class="py-8 text-center text-gray-600 text-sm border-t border-white/5">
         &copy; 2026 Digitalizador de Ideias. Todos os direitos reservados.
     </footer>
-
-</body>
-</html>
+</div>
+{% endblock %}
