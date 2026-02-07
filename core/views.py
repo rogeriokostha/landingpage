@@ -131,3 +131,19 @@ def protocolo_ia(request):
 
 def obrigado(request):
     return render(request, "obrigado.html")
+
+from django.shortcuts import render, get_object_or_404
+from .models import Portfolio
+
+# ... suas outras views (home, lista_exemplos, etc)
+
+def detalhe_exemplo(request, slug):
+    # Esta função busca o projeto pelo slug que vem da URL
+    projeto = get_object_or_404(Portfolio, slug=slug, ativo=True)
+    
+    # Aqui você decide qual template exibir. 
+    # Como você tem templates específicos (medicina.html, etc), 
+    # podemos usar o slug para carregar o arquivo certo:
+    template_name = f"{slug}.html"
+    
+    return render(request, template_name, {'projeto': projeto})
